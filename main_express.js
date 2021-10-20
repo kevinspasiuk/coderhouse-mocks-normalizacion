@@ -66,7 +66,7 @@ io.on('connection', (socket) => {
     mensajesRepository.save(mensaje)
       .then( id => {
         console.log("[Nuevo mensaje] ", mensaje )
-        mensajesRepository.getAll().then(mensajes => socket.emit('mensajes', mensajes))
+        mensajesRepository.getAll().then(mensajes => io.sockets.emit('mensajes', mensajes))
       }
     )
   })
