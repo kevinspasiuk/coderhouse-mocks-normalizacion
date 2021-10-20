@@ -1,0 +1,29 @@
+<div class= "mt-3">
+  <h2> Catálogo </h2>
+  {{#if productos}}
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Título</th>
+          <th scope="col">Precio</th>
+          <th scope="col">Thumbnail</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each productos}}
+        <tr>
+        <td>{{this.title}}</td>
+        <td>{{this.price}}</td>
+        <td>{{this.thumbnail}}</td>
+        </tr>
+        {{/each}}
+        </tbody>
+    </table>
+  
+  {{else}}
+    
+    <div class="alert alert-info" role="alert">
+      No hay productos en el cátalogo
+    </div>
+  {{/if}}
+</div>

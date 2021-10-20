@@ -1,0 +1,17 @@
+{
+  "name": "motorEjs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main_express.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "handlebars": "^4.7.7",
+    "socket.io": "^4.3.1"
+  }
+}

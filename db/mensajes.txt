@@ -1,0 +1,20 @@
+[
+  {
+    "author": "Servidor",
+    "message": "Bienvenid@ al chat entre usuarios!",
+    "dateTime": "20-10-2022 09:00",
+    "id": 0
+  },
+  {
+    "author": "kevin",
+    "message": "cd",
+    "dateTime": "2021-10-20 16:43:59",
+    "id": 1
+  },
+  {
+    "author": "cddc",
+    "message": "vfvfv",
+    "dateTime": "2021-10-20 16:44:6",
+    "id": 2
+  }
+]
