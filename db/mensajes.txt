@@ -1,8 +1,0 @@
-[
-  {
-    "author": "Servidor",
-    "message": "Bienvenid@ al chat entre usuarios!",
-    "dateTime": "20-10-2022 09:00",
-    "id": 0
-  }
-]

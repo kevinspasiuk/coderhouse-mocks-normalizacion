@@ -31,8 +31,11 @@ function getCurrentDateTime(){
 
 // Persistencia de mensajes
 const Contenedor = require('./model/contenedor.js')
-const mensajesRepository = new Contenedor('./db/mensajes.txt')
-const productos = [{title: "a", price: 1, thumbnail: "1 "}]
+const mensajesRepository = new Contenedor()
+
+//Persistencia de productos 
+const ContenedorProductos = require('./model/productos.js')
+const productosRepository = new ContenedorProductos()
 
 
 app.get('/', function (req, res){
@@ -40,11 +43,12 @@ app.get('/', function (req, res){
 });
 
 
-app.post('/api/productos', function (req, res){
+app.post('/api/productos', async function (req, res){
   const producto = req.body
   console.log(producto)
-  productos.push(producto)
-  io.sockets.emit('productos', productos)
+  await productosRepository.save(producto)
+  const productos = await productosRepository.getAll()
+  io.sockets.emit('productos', productos )
   res.redirect('/')
 });
 
@@ -52,9 +56,10 @@ server.listen(port, () => {
   console.log(`Example app listening at http://localhost:${port}`)
 })
 
-io.on('connection', (socket) => {
+io.on('connection', async (socket) => {
   
   console.log('a user connected');
+  const productos = await productosRepository.getAll()
   socket.emit('productos', productos)
   
   mensajesRepository.getAll()
